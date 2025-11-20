@@ -246,7 +246,7 @@ def createBasicLinuxUser(self, cmd):
     
     adminpass = getpass.getpass() #ask for user's password
     try:
-        subprocess.run(['useradd', '-p', new_password, username ])
+        subprocess.run(['useradd ',username, ' -p ', new_password ])
     except:
         print("Failed to add user. Please try again later.")
         sys.exit(1)

@@ -18,7 +18,7 @@ def main():
         if systemType == 'Windows': #if windows system
             print (f"Welcome to System Navigator for {systemType}. ")
             print ("Select a task to continue.")
-            print()
+            print ()
             print ("1. Print Working Directory")
             print ("2. Change Directory")
             print ("3. Display directory contents ")#NEEDS ATTENTION!!!!!
@@ -33,7 +33,7 @@ def main():
             print ("12. create new admin user account")
             print ("700. Call a Test Function")
             print ("600. Quit ")
-            print()
+            print ()
             
             #user enters their choice and presses ENTER
             userSelect = input("Make A selection and press ENTER: ")

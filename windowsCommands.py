@@ -6,7 +6,7 @@ import os
 import platform
 import shutil
 import subprocess
-import GPUtil
+
 import platform
 import psutil
 import SystemNavigator
@@ -107,24 +107,7 @@ def displaySystemInformation():
     print(f"Free Disk Space: {disk_info.free} bytes")
     print(f"Disk Space Utilization: {disk_info.percent}%")
 
-    #Get GPU information
-    gpus = GPUtil.getGPUs()
-
-    if not gpus:
-        print("No GPU detected.")
-    else:
-        for i, gpu in enumerate(gpus):
-            print(f"\nGPU {i + 1} Information:")
-            print(f"ID: {gpu.id}")
-            print(f"Name: {gpu.name}")
-            print(f"Driver: {gpu.driver}")
-            print(f"GPU Memory Total: {gpu.memoryTotal} MB")
-            print(f"GPU Memory Free: {gpu.memoryFree} MB")
-            print(f"GPU Memory Used: {gpu.memoryUsed} MB")
-            print(f"GPU Load: {gpu.load * 100}%")
-            print(f"GPU Temperature: {gpu.temperature}°C")
-
-    print()
+ 
 
 #function 6
 #Delete directory and its contents

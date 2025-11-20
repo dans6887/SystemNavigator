@@ -2,7 +2,7 @@ import os
 import platform
 import shutil
 import subprocess
-import GPUtil
+
 import platform
 import psutil
 import linuxCommands

@@ -9,7 +9,9 @@ import subprocess
 import GPUtil
 import platform
 import psutil
-import SystemNavigator_Updated
+import sys
+import getpass
+import SystemNavigator
 
 #function 1 - print working directory
 def printWorkingDirectory():
@@ -61,7 +63,7 @@ def makeNewDirectory():
     #if user selects no, return to main selection
     elif userChoice in userChoiceNo:
         print("You need to go back and code this option")
-        SystemNavigator_Updated.main()
+        SystemNavigator.main()
 
 #function 5
 #Get System Info
@@ -148,10 +150,10 @@ def deleteDirectoryAndContents():
             shutil.rmtree(newDirectoryName)
 
         elif confirmDelete in confirmDeleteNo:
-            SystemNavigator_Updated.main()
+            SystemNavigator.main()
     #if user selects no, return to main selection
     elif userChoice in userChoiceNo:
-        SystemNavigator_Updated.main()
+        SystemNavigator.main()
 
 #function 7 
 #Remove an empty directory
@@ -193,11 +195,11 @@ def removeEmptyDirectory():
                 print()
 
         elif confirmDelete in confirmDeleteNo:#return to main menue if user changes their mind
-            SystemNavigator_Updated.main()
+            SystemNavigator.main()
 
     #if user selects no, return to main selection
     elif userChoice in userChoiceNo:
-        SystemNavigator_Updated.main()
+        SystemNavigator.main()
 
 
 #function 8
@@ -227,10 +229,26 @@ def deleteFile():
         
     #if user selects no, return to main selection
     elif userChoice in userChoiceNo:
-        SystemNavigator_Updated.main()
+        SystemNavigator.main()
   
 #function 9
 #Display NetworkInfomation
 def displayNetworkInformation():
     data = os.system('ifconfig /all')
     print(data)
+    
+
+#function 11
+#create Basic user account
+def createBasicLinuxUser(self, cmd):
+    username = print(input("Enter a username for the account: "))
+    new_password = print(input("Enter a password for the account: "))
+    
+    adminpass = getpass.getpass() #ask for user's password
+    try:
+        subprocess.run(['useradd', '-p', new_password, username ])
+    except:
+        print("Failed to add user. Please try again later.")
+        sys.exit(1)
+    
+    

@@ -1,2 +1,2 @@
 # SystemNavigator
-Repository for SystemNavigator project
+Simplified, Modularized command input for windows and linux commands. 
